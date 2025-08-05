@@ -18,9 +18,10 @@ const CreateCard = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="!p-5 bg-gradient-to-r from-violet-500 to-purple-600 text-white hover:from-violet-600 hover:to-purple-700 hover:-translate-y-1 transition-all duration-300 px-6 py-3 rounded-2xl shadow-lg shadow-violet-500/40 relative overflow-hidden group animate-pulse">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></div>
-          <span className="mr-1">⚡</span>
+        <Button
+          variant="outline"
+          className="ml-2 !bg-[#A456F7] text-white !text-sm hover:!border-transparent !shadow-[0_0_12px_3px_rgba(255,255,255,0.2)] hover:!shadow-[0_0_20px_6px_rgba(255,255,255,0.2)] !transition-all duration-200 hover:-translate-y-1 "
+        >
           Create Hive
         </Button>
       </DialogTrigger>
