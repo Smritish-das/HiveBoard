@@ -47,36 +47,43 @@ const HouseholdCards = ({name,member,task,note,grocery,household,setCurrentHouse
       
       navigate('/household')
     }}>
-      <Card className="cursor-pointer !rounded-3xl border-2 border-[#281e4b] bg-[#0D0D1E] transition-all duration-300 hover:-translate-y-2 hover:shadow-[10px_10px_20px_rgba(255,255,255,0.15)] overflow-hidden">
-        <div className="flex flex-row justify-between px-4 sm:px-6 lg:px-7 pt-4 sm:pt-5">
+      <Card className="cursor-pointer rounded-3xl border border-violet-500/20 bg-gradient-to-br from-[#0f0f23]/80 to-[#050507]/90 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] hover:border-violet-500/40 hover:shadow-2xl hover:shadow-violet-500/20 overflow-hidden relative group">
+        
+        {/* Hover gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        
+        <div className="flex flex-row justify-between items-start p-6 lg:p-8 relative z-10">
           <div className="flex-1 min-w-0">
-            <h2 className="text-lg sm:text-xl font-semibold text-white truncate">{name}</h2>
-            <p className="text-xs sm:text-sm text-muted-foreground flex items-center">
-              <i className="ri-group-3-line text-secondary mr-1 flex-shrink-0"></i>
-              <span className="truncate">{member} Active {member > 1 ? 'members' : 'member'}</span>
+            <h2 className="text-xl lg:text-2xl font-bold text-white truncate mb-2">{name}</h2>
+            <p className="text-sm text-slate-400 flex items-center gap-2">
+              <span className="text-lg">👥</span>
+              <span className="truncate">{member} Active {member > 1 ? 'Members' : 'Member'}</span>
             </p>
           </div>
-          <span className="h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 bg-[#a257f7] flex items-center justify-center rounded-xl flex-shrink-0 ml-3">
-            <i className="ri-home-2-fill text-lg sm:text-xl lg:text-2xl text-white"></i>
-          </span>
+          <div className="h-15 w-15 lg:h-16 lg:w-16 bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-violet-500/30 flex-shrink-0 ml-4 group-hover:shadow-violet-500/50 transition-all duration-300">
+            🏙️
+          </div>
         </div>
         
-        <div className="flex items-center justify-center p-4 sm:p-5 lg:p-6">
-          <div className="grid grid-cols-3 gap-2 sm:gap-4 lg:gap-6 w-full">
-            <div className="aspect-square p-2 sm:p-3 lg:p-4 border-2 border-[#281e4b] bg-[#191432] rounded-xl flex flex-col items-center justify-center min-h-[60px] sm:min-h-[80px]">
-              <span className="text-base sm:text-lg lg:text-2xl font-semibold text-white">{task}</span>
-              <p className="text-muted-foreground text-xs sm:text-sm text-center">Tasks</p>
+        <div className="px-6 lg:px-8 pb-6 lg:pb-8 relative z-10">
+          <div className="grid grid-cols-3 gap-4">
+            <div className="text-center p-4 bg-gradient-to-br from-violet-500/5 to-purple-600/5 border border-violet-500/10 rounded-xl hover:bg-violet-500/10 transition-all duration-300">
+              <div className="text-xl lg:text-2xl font-bold text-violet-300 mb-1">{task}</div>
+              <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Tasks</div>
             </div>
-            <div className="aspect-square p-2 sm:p-3 lg:p-4 border-2 border-[#281e4b] bg-[#191432] rounded-xl flex flex-col items-center justify-center min-h-[60px] sm:min-h-[80px]">
-              <span className="text-base sm:text-lg lg:text-xl font-semibold text-white">{grocery}</span>
-              <p className="text-muted-foreground text-xs sm:text-sm text-center">Groceries</p>
+            <div className="text-center p-4 bg-gradient-to-br from-violet-500/5 to-purple-600/5 border border-violet-500/10 rounded-xl hover:bg-violet-500/10 transition-all duration-300">
+              <div className="text-xl lg:text-2xl font-bold text-violet-300 mb-1">{grocery}</div>
+              <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Items</div>
             </div>
-            <div className="aspect-square p-2 sm:p-3 lg:p-4 border-2 border-[#281e4b] bg-[#191432] rounded-xl flex flex-col items-center justify-center min-h-[60px] sm:min-h-[80px]">
-              <span className="text-base sm:text-lg lg:text-xl font-semibold text-white">{note}</span>
-              <p className="text-muted-foreground text-xs sm:text-sm text-center">Notes</p>
+            <div className="text-center p-4 bg-gradient-to-br from-violet-500/5 to-purple-600/5 border border-violet-500/10 rounded-xl hover:bg-violet-500/10 transition-all duration-300">
+              <div className="text-xl lg:text-2xl font-bold text-violet-300 mb-1">{note}</div>
+              <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Notes</div>
             </div>
           </div>
         </div>
+
+        {/* Animated shine effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-violet-500/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out"></div>
       </Card>
     </div>
   );
